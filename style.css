@@ -1,0 +1,64 @@
+/* POPUP STYLES */
+
+.event-overlay {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100dvh;
+    background-color: transparent;
+    z-index: 99;
+    transition: background-color .3s ease-in-out;
+    pointer-events: none;
+}
+ 
+.event-overlay.visible {
+    pointer-events: all;
+    background-color: rgba(0, 0, 0, 0.144);
+}
+
+.event-image-container {
+    position: relative;
+    height: 600px;
+    max-width: 600px;
+    width: 100%;
+    opacity: 0;
+    transition: all .3s ease-in-out .50ms;
+    transform: translateY(10px);
+}
+
+
+.event-overlay.visible .event-image-container {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.event-image-container .event-close-button {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background-color: transparent;
+    border: none;
+    transition: transform .1s ease-in-out;
+    font-size: 3rem;
+    cursor: pointer;
+    color: white;
+}
+
+.event-image-container .event-close-button:hover {
+    transform: scale(1.2);
+}
+
+
+.event-image-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.151);
+}
+
+/* BANNER STYLES */
